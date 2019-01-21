@@ -23,9 +23,9 @@ function test_checkHumberId(id_In, expected){
 	let result = checkHumberId(id_In);
 
 	if(result === expected){
-		resultString = "==PASSED==";
+		resultString = "<span style='color: green;'>==PASSED==</span>";
 	}else{
-		resultString = "xxFAILEDxx";
+		resultString = "<span style='color: red;'>xxFAILEDxx</span>";
 	}
 	
 	let printmsg = "Value Tested : " + id_In + " Expected Result : " + expected + " Result : " + resultString + "<br>" ;
@@ -40,6 +40,9 @@ test_checkHumberId("n01297218", true);
 test_checkHumberId(0123678, false);
 test_checkHumberId("N012345", true);
 test_checkHumberId("N012367570", false);
+test_checkHumberId("G012367570", false);
+test_checkHumberId("012367570H", false);
+
 
 
 
